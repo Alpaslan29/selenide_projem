@@ -2,6 +2,7 @@ package stepdefinitions;
 
 
 
+import com.codeborne.selenide.Configuration;
 import io.cucumber.java.en.*;
 import io.cucumber.java.en.Then;
 
@@ -29,7 +30,6 @@ public class CommonStepDefinitions {
     @Then("onceki sayfaya gider")
     public void onceki_sayfaya_gider() {
         back();
-
     }
     @Then("sonraki sayfaya gider")
     public void sonraki_sayfaya_gider() {
@@ -39,10 +39,12 @@ public class CommonStepDefinitions {
     @Then("sayfayi yeniler")
     public void sayfayi_yeniler() {
         refresh();
-
     }
     @Then("sayfayi acik tutar")
     public void sayfayi_acik_tutar() {
+        // var sayılan selenide  ayaralarda browser otomatik kapanmaktadır
+        // engellemek icin
+        Configuration.holdBrowserOpen=true;
 //
     }
 
